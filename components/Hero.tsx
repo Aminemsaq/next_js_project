@@ -9,8 +9,8 @@ import Image from "next/image"; // Import Image component from Next.js
 
 
 const HeroSection = () => {
-  
-  const thumbnailWebp = "/image.webp"; // Path to your WebP thumbnail
+
+  const thumbnailWebp = "/images/image.webp"; // Path to your WebP thumbnail
   const [showVideo, setShowVideo] = useState(false);
 
   const handleImageClick = () => {

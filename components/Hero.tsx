@@ -6,14 +6,18 @@ import Head from "next/head";
 import { BsPlayFill } from "react-icons/bs"; // Import the play icon from React Icons
 import Image from "next/image"; // Import Image component from Next.js
 
+
+
 const HeroSection = () => {
+  
+  const thumbnailWebp = "/image.webp"; // Path to your WebP thumbnail
   const [showVideo, setShowVideo] = useState(false);
 
   const handleImageClick = () => {
     setShowVideo(true);
   };
 
-  const thumbnailWebp = "/image.webp"; // Path to your WebP thumbnail
+  
 
   return (
     <div>

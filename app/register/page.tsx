@@ -37,7 +37,8 @@ const Registration: React.FC = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('https://sheetdb.io/api/v1/oehrz137dehzq', formData);
+      const response = await axios.post(process.env.API_URL!, formData);
+
 
       console.log('Form submitted successfully:', response.data);
 

@@ -1,7 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   env: {
-    API_URL: process.env.API_URL,
+    NEXT_PUBLIC_API_URL: "https://sheetdb.io/api/v1/oehrz137dehzq",
   },
   async headers() {
     return [

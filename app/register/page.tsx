@@ -61,7 +61,6 @@ const Registration: React.FC = () => {
         progress: undefined,
       });
 
-
     } catch (error) {
       console.error('Error submitting form:', error);
       // Handle error state or display error message to user

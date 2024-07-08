@@ -8,7 +8,7 @@ import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-const apiUrl = process.env.API_URL;
+const apiUrl = process.env.NEXT_PUBLIC_API_URL;
 
 interface FormData {
   typeOfTraining: string;
@@ -61,8 +61,7 @@ const Registration: React.FC = () => {
         progress: undefined,
       });
 
-      // Redirect programmatically using window.location or other method
-      window.location.href = '/'; // Example of redirecting to homepage
+
     } catch (error) {
       console.error('Error submitting form:', error);
       // Handle error state or display error message to user

@@ -1,14 +1,14 @@
 /* eslint-disable react/no-unescaped-entities */
-// app/register/page.tsx
+
 "use client";
-/* eslint-disable react/no-unescaped-entities */
-// app/register/page.tsx
 import Link from 'next/link';
 import React, { useState } from 'react';
 import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+
+const apiUrl = process.env.API_URL;
 
 interface FormData {
   typeOfTraining: string;
@@ -37,8 +37,7 @@ const Registration: React.FC = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post(process.env.API_URL!, formData);
-
+      const response = await axios.post(apiUrl!, formData);
 
       console.log('Form submitted successfully:', response.data);
 

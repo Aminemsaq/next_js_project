@@ -7,8 +7,10 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import router, { useRouter } from 'next/router';
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
+
 
 interface FormData {
   typeOfTraining: string;
@@ -52,6 +54,7 @@ const Registration: React.FC = () => {
 
       // Show toast notification
       toast.success('Votre inscription a été soumise avec succès !', {
+        
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,
@@ -60,6 +63,8 @@ const Registration: React.FC = () => {
         draggable: true,
         progress: undefined,
       });
+      
+       // Initialize useRouter hook
 
     } catch (error) {
       console.error('Error submitting form:', error);

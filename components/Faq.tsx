@@ -32,7 +32,7 @@ const FaqSection = () => {
   };
 
   return (
-    <div className="py-12">
+    <div className="relative py-10">
       <div className="container mx-auto text-center">
         <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
           FAQ - Questions fréquentes
@@ -47,7 +47,7 @@ const FaqSection = () => {
           data-accordion="collapse"
           data-active-classes="bg-white text-gray-900"
           data-inactive-classes="text-gray-500"
-          className="max-w-3xl w-full"
+          className="max-w-3xl w-full max-h-[500px] overflow-y-auto"
         >
           {faqItems.map((item, index) => (
             <div key={index}>

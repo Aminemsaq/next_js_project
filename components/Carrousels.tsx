@@ -1,70 +1,96 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 import { useState } from "react";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
-const testimonials = [
+const initialTestimonials = [
   {
-    name: "John Doe",
-    testimonial: "This course changed my life! The content is top-notch and easy to follow.",
+    url: "https://www.youtube.com/embed/rHrYfGi-78k",
+    thumbnail: "https://img.youtube.com/vi/rHrYfGi-78k/hqdefault.jpg",
+    playing: false,
   },
   {
-    name: "Jane Smith",
-    testimonial: "An amazing experience, I learned so much about trading and risk management.",
+    url: "https://www.youtube.com/embed/YuY68vJF94Q",
+    thumbnail: "https://img.youtube.com/vi/YuY68vJF94Q/hqdefault.jpg",
+    playing: false,
   },
   {
-    name: "Sam Wilson",
-    testimonial: "Highly recommended for anyone looking to get serious about trading.",
-  }
+    url: "https://www.youtube.com/embed/F-Jv7exUeZc",
+    thumbnail: "https://img.youtube.com/vi/F-Jv7exUeZc/hqdefault.jpg",
+    playing: false,
+  },
 ];
 
 const Carrousels = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
+  const [testimonials, setTestimonials] = useState(initialTestimonials);
 
-  const goToPrevious = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === 0 ? testimonials.length - 1 : prevIndex - 1));
-  };
-
-  const goToNext = () => {
-    setCurrentIndex((prevIndex) => (prevIndex === testimonials.length - 1 ? 0 : prevIndex + 1));
+  const togglePlay = (index: number) => {
+    setTestimonials((prevTestimonials) =>
+      prevTestimonials.map((testimonial, i) =>
+        i === index ? { ...testimonial, playing: !testimonial.playing } : { ...testimonial, playing: false }
+      )
+    );
   };
 
   return (
-    <div className="flex flex-col items-center justify-center py-12 bg-gray-800 text-white">
-      <h2 className="text-4xl md:text-5xl font-bold mb-6 text-center">
-        Testimonials
+    <div className="flex flex-wrap justify-center py-10">
+      <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center w-full text-white">
+        Témoignages
       </h2>
-      <div className="relative w-full max-w-3xl">
-        <div className="overflow-hidden relative">
-          <div
-            className="flex transition-transform ease-out duration-500"
-            style={{ transform: `translateX(-${currentIndex * 100}%)` }}
-          >
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={index}
-                className="w-full flex-shrink-0 p-4"
-              >
-                <div className="bg-gray-700 p-6 rounded-lg shadow-lg text-center">
-                  <p className="text-xl font-semibold mb-2">{testimonial.name}</p>
-                  <p className="text-gray-300">{testimonial.testimonial}</p>
+      {testimonials.map((testimonial, index) => (
+        <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
+          <div className="bg-white rounded-lg border-b-2 border-white-500 overflow-hidden relative">
+            <img
+              src={testimonial.thumbnail}
+              alt={`Thumbnail ${index}`}
+              className="w-full h-auto cursor-pointer"
+              onClick={() => togglePlay(index)}
+            />
+            {testimonial.playing && (
+              <div className="absolute inset-0 flex items-center justify-center">
+                <iframe
+                  title={`YouTube Video ${index}`}
+                  width="100%"
+                  height="100%"
+                  src={testimonial.url}
+                  frameBorder="0"
+                  allowFullScreen
+                  className="absolute inset-0 z-10"
+                ></iframe>
+                <div
+                  className="absolute inset-0 bg-white opacity-75"
+                  onClick={() => togglePlay(index)}
+                ></div>
+                <div
+                  className="absolute inset-0 flex items-center justify-center"
+                  onClick={() => togglePlay(index)}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    className="h-12 w-12 text-white cursor-pointer"
+                    fill="none"
+                    viewBox="0 0 24 24"
+                    stroke="currentColor"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M20.25 12L4.75 3.5V20.5L20.25 12z"
+                    />
+                  </svg>
                 </div>
               </div>
-            ))}
+            )}
+            <button
+              className="absolute top-0 right-0 m-2 p-2 bg-gray-600 rounded-full hover:bg-gray-700 focus:outline-none"
+              onClick={() => togglePlay(index)}
+              style={{ backgroundColor: "#c7f0f4", color: "#333" }}
+            >
+              {testimonial.playing ? "Pause" : "Play"}
+            </button>
           </div>
         </div>
-        <button
-          onClick={goToPrevious}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 p-2 bg-gray-600 rounded-full hover:bg-gray-700 focus:outline-none"
-        >
-          <FaChevronLeft className="w-6 h-6 text-white" />
-        </button>
-        <button
-          onClick={goToNext}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 p-2 bg-gray-600 rounded-full hover:bg-gray-700 focus:outline-none"
-        >
-          <FaChevronRight className="w-6 h-6 text-white" />
-        </button>
-      </div>
+      ))}
     </div>
   );
 };

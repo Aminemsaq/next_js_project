@@ -45,13 +45,13 @@ const HeroSection = () => {
       </nav>
 
       <section
-        className="bg-slate-950 text-white min-h-screen flex justify-center pt-36 md:items-center"
+        className="bg-slate-950 text-white min-h-screen flex justify-center pt-24 lg:pt-34 md:items-center"
         id="home"
       >
         <div className="container mx-auto text-center lg:px-9 pt-15">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 mt-10 px-3">
-            Découvrez le Trading
-            <br /> Changez Votre Vie,
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 mt-14 px-3">
+          Kan3elmok, Kattabe9
+           <span className="text-orange-500">, Katbedel 7yatek.</span>
           </h1>
           <p className="text-lg md:text-2xl mb-12 px-6">
             Apprenez à trader en suivant des étapes simples et efficaces.

@@ -40,7 +40,7 @@ const Footer = () => {
           </div>
         </div>
       </div>
-      <div className="text-left mt-10  text-left lg:text-center  text-gray-500 text-sm">
+      <div className="text-left mt-10 lg:text-center  text-gray-500 text-sm">
         &copy; 2024 Gamir Academy. Tous droits réservés.
       </div>
     </footer>

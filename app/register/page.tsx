@@ -123,8 +123,8 @@ const Registration: React.FC = () => {
                   className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800 sm:text-sm"
                 >
                   <option value="">Sélectionnez une formation</option>
-                  <option value="Gamir Academy (2000 Dhs)">Cours débutant à l'Académie Gamir (2000 Dhs)</option>
-                  <option value="Coaching one-to-one premium (3000 Dhs)">Coaching One-to-One Premium (3000 Dhs)</option>
+                  <option value="Gamir Academy (2000 Dhs)">Group Coaching at Gamir Academy (1950 Dhs)</option>
+                  <option value="Coaching one-to-one premium (3000 Dhs)">One-to-One Coaching Premium (3100 Dhs)</option>
                 </select>
               </div>
 

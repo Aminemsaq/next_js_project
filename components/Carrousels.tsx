@@ -37,7 +37,7 @@ const Carrousels = () => {
       <h1 className="text-white text-center text-4xl md:text-5xl font-extrabold mb-6">
       Témoignages
       </h1>
-      <h2 className="text-white text-center text-2xl mb-10">
+      <h2 className="text-orange-500 text-center text-2xl mb-10">
       Hta nta t9der tbedel 7yatek b7alhoum !
       </h2>
       </div>

@@ -22,7 +22,7 @@ interface Offer {
 const offers: Offer[] = [
   {
     id: 1,
-    title: "Beginner Course at Gamir Academy",
+    title: "Group Coaching at Gamir Academy",
     items: [
       { name: 'Mindset + Basics', price: 'Free' },
       { name: 'Money + Risk Management', price: 'Free' },
@@ -53,9 +53,9 @@ const offers: Offer[] = [
   },
   {
     id: 2,
-    title: 'Premium One-to-One Coaching',
+    title: 'One-to-One Coaching Premium ',
     items: [
-      { name: 'Personalized Strategy Sessions', price: '1000 dh' },
+      { name: 'Personalized Sessions', price: '1000 dh' },
       { name: 'Direct Access to Head Coach', price: '1000 dh' },
       {
         name: 'Advanced Technical Analysis',

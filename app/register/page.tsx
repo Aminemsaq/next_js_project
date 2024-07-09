@@ -7,10 +7,8 @@ import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import router, { useRouter } from 'next/router';
 
 const apiUrl = process.env.NEXT_PUBLIC_API_URL;
-
 
 interface FormData {
   typeOfTraining: string;
@@ -29,6 +27,7 @@ const Registration: React.FC = () => {
     city: '',
     email: '',
   });
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -54,7 +53,6 @@ const Registration: React.FC = () => {
 
       // Show toast notification
       toast.success('Votre inscription a été soumise avec succès !', {
-        
         position: 'top-right',
         autoClose: 5000,
         hideProgressBar: false,
@@ -63,8 +61,9 @@ const Registration: React.FC = () => {
         draggable: true,
         progress: undefined,
       });
-      
-       // Initialize useRouter hook
+
+      // Show thank you message
+      setIsSubmitted(true);
 
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -104,100 +103,111 @@ const Registration: React.FC = () => {
       </nav>
       <div className="bg-slate-950 pt-28 flex flex-col justify-center items-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="max-w-md mx-auto bg-white shadow-md rounded-lg p-4 sm:p-6">
-            <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">
-              REJOIGNEZ NOS PLANS AUJOURD’HUI
-            </h2>
-            <p className="text-center text-gray-600 mb-4">Et transformez votre vie !</p>
-            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
-              <div className="mb-4">
-                <label htmlFor="typeOfTraining" className="block text-sm font-medium text-gray-700">
-                  Type de formation *
-                </label>
-                <select
-                  name="typeOfTraining"
-                  id="typeOfTraining"
-                  value={formData.typeOfTraining}
-                  onChange={handleChange}
-                  required
-                  className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800 sm:text-sm"
-                >
-                  <option value="">Sélectionnez une formation</option>
-                  <option value="Gamir Academy (2000 Dhs)">Group Coaching at Gamir Academy (1950 Dhs)</option>
-                  <option value="Coaching one-to-one premium (3000 Dhs)">One-to-One Coaching Premium (3100 Dhs)</option>
-                </select>
-              </div>
-
-              <div className="grid grid-cols-2 gap-4">
+          {isSubmitted ? (
+            <div className="max-w-md mx-auto bg-white shadow-md rounded-lg p-4 sm:p-6 text-center">
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">
+                Merci pour votre inscription !
+              </h2>
+              <p className="text-gray-600 mb-4">
+                Notre support vous contactera dans les 24 heures pour une consultation.
+              </p>
+            </div>
+          ) : (
+            <div className="max-w-md mx-auto bg-white shadow-md rounded-lg p-4 sm:p-6">
+              <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">
+                REJOIGNEZ NOS PLANS AUJOURD’HUI
+              </h2>
+              <p className="text-center text-gray-600 mb-4">Et transformez votre vie !</p>
+              <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
                 <div className="mb-4">
-                  <label htmlFor="nomcomplet" className="block text-sm font-medium text-gray-700">
-                    Nom complet *
+                  <label htmlFor="typeOfTraining" className="block text-sm font-medium text-gray-700">
+                    Type de formation *
                   </label>
-                  <input
-                    type="text"
-                    name="nomcomplet"
-                    id="nomcomplet"
-                    value={formData.nomcomplet}
+                  <select
+                    name="typeOfTraining"
+                    id="typeOfTraining"
+                    value={formData.typeOfTraining}
                     onChange={handleChange}
                     required
                     className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800 sm:text-sm"
-                  />
+                  >
+                    <option value="">Sélectionnez une formation</option>
+                    <option value="Gamir Academy (2000 Dhs)">Group Coaching at Gamir Academy (1950 Dhs)</option>
+                    <option value="Coaching one-to-one premium (3000 Dhs)">One-to-One Coaching Premium (3100 Dhs)</option>
+                  </select>
                 </div>
 
-                <div className="mb-4">
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
-                    Téléphone
-                  </label>
-                  <input
-                    type="text"
-                    name="phone"
-                    id="phone"
-                    value={formData.phone}
-                    onChange={handleChange}
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800 sm:text-sm"
-                  />
+                <div className="grid grid-cols-2 gap-4">
+                  <div className="mb-4">
+                    <label htmlFor="nomcomplet" className="block text-sm font-medium text-gray-700">
+                      Nom complet *
+                    </label>
+                    <input
+                      type="text"
+                      name="nomcomplet"
+                      id="nomcomplet"
+                      value={formData.nomcomplet}
+                      onChange={handleChange}
+                      required
+                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800 sm:text-sm"
+                    />
+                  </div>
+
+                  <div className="mb-4">
+                    <label htmlFor="phone" className="block text-sm font-medium text-gray-700">
+                      Téléphone
+                    </label>
+                    <input
+                      type="text"
+                      name="phone"
+                      id="phone"
+                      value={formData.phone}
+                      onChange={handleChange}
+                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800 sm:text-sm"
+                    />
+                  </div>
+
+                  <div className="mb-4">
+                    <label htmlFor="city" className="block text-sm font-medium text-gray-700">
+                      Ville
+                    </label>
+                    <input
+                      type="text"
+                      name="city"
+                      id="city"
+                      value={formData.city}
+                      onChange={handleChange}
+                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800 sm:text-sm"
+                    />
+                  </div>
+
+                  <div className="mb-4">
+                    <label htmlFor="email" className="block text-sm font-medium text-gray-700">
+                      Adresse e-mail
+                    </label>
+                    <input
+                      type="email"
+                      name="email"
+                      id="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      required
+                      className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800 sm:text-sm"
+                    />
+                  </div>
                 </div>
 
-                <div className="mb-4">
-                  <label htmlFor="city" className="block text-sm font-medium text-gray-700">
-                    Ville
-                  </label>
-                  <input
-                    type="text"
-                    name="city"
-                    id="city"
-                    value={formData.city}
-                    onChange={handleChange}
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800 sm:text-sm"
-                  />
+                <div>
+                  <button
+                    type="submit"
+                    className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-semibold text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
+                  >
+                    Envoyer
+                  </button>
                 </div>
-
-                <div className="mb-4">
-                  <label htmlFor="email" className="block text-sm font-medium text-gray-700">
-                    Adresse e-mail
-                  </label>
-                  <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    value={formData.email}
-                    onChange={handleChange}
-                    required
-                    className="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500 text-gray-800 sm:text-sm"
-                  />
-                </div>
-              </div>
-
-              <div>
-                <button
-                  type="submit"
-                  className="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-semibold text-white bg-orange-500 hover:bg-orange-600 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-red-500"
-                >
-                  Envoyer
-                </button>
-              </div>
-            </form>
-          </div>
+              </form>
+            </div>
+          )}
         </div>
       </div>
 
@@ -216,9 +226,6 @@ const Registration: React.FC = () => {
           <a href="https://www.linkedin.com" className="text-gray-400 hover:text-white">
             <FaLinkedin className="w-6 h-6" />
           </a>
-        </div>
-        <div className="mt-3 lg:mt-5">
-          &copy; 2024 Gamir Academy. Tous droits réservés.
         </div>
       </div>
     </>

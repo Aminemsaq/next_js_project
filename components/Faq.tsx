@@ -14,6 +14,11 @@ const FaqSection = () => {
         "Seance en ligne en Google meet a 22.00, kankhaliwe likom record neta3e la seance mora kola hissa.",
     },
     {
+      question: "Wach koulchi i9edere idir les resultas ?",
+      answer:
+        "Coaching dyalna 100% ghadi dir bih resultas ila tebe99ety lema3lomat li kheditti 100%.",
+    },
+    {
       question: "Achenou ghadi ikoune mora le coaching ?",
       answer:
         "Seances de suivie le weekend + acces les groupes li kanhetto fih daily analysis.",
@@ -22,7 +27,7 @@ const FaqSection = () => {
       question: "Support 24/24h 7/7j",
       answer:
         "Kan3etiwekoume whatssap personnel dyalna ayi we9ita kankounou m3akoum.",
-    },
+    }
   ];
 
   const [activeIndex, setActiveIndex] = useState<number | null>(null);

@@ -41,6 +41,10 @@ const offers: Offer[] = [
         name: 'Follow-up Sessions',
         price: 'Free',
       },
+      {
+        name:'Daily Analysis Group',
+        price:'150 dh',
+      }
      
     ],
     totalPriceBeforeDiscount: 2250,
@@ -63,11 +67,11 @@ const offers: Offer[] = [
         ]
       },
       { name: 'Mastering Risk Management', price: 'Free' },
-      { name: 'Exclusive Mentorship', price: '1000 dh' },
+      { name: 'Exclusive Mentorship', price: '1100 dh' },
       { name: 'Unlimited Follow-up Sessions', price: 'Free' },
       {
         name:'Daily Analysis Group',
-        price:'1100 dh',
+        price:'Free',
       }
     ],
     totalPriceBeforeDiscount: 4500,

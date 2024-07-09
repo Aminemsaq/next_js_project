@@ -4,24 +4,24 @@ import { useState } from 'react';
 const FaqSection = () => {
   const faqItems = [
     {
-      question: "Quelle est la durée typique d'un cours ?",
+      question: "Ch7al l'moda de la formation ?",
       answer:
-        "La durée de nos cours varie, mais en moyenne, les étudiants complètent le programme en 3 à 6 mois, selon leur engagement et leur niveau de compétence préalable.",
+        "1,5 mois de coaching - 18 seances(3 seances par semaine) + les seances de suivie et pratique.",
     },
     {
-      question: "Quels sujets sont couverts dans votre cours de trading ?",
+      question: "Kifache kayedouzo les seances ?",
       answer:
-        "Notre cours couvre les fondamentaux du trading, l'analyse technique avancée, la gestion des risques, la psychologie du trader et bien plus encore.",
+        "Seance en ligne en Google meet a 22.00, kankhaliwe likom record neta3e la seance mora kola hissa.",
     },
     {
-      question: "Comment sont dispensés vos cours, en ligne ou en personne ?",
+      question: "Achenou ghadi ikoune mora le coaching ?",
       answer:
-        "Nos cours sont dispensés exclusivement en ligne, ce qui vous permet de suivre les leçons depuis n'importe où dans le monde, à votre propre rythme.",
+        "Seances de suivie le weekend + acces les groupes li kanhetto fih daily analysis.",
     },
     {
-      question: "Quels types d'analyses sont enseignés dans le cours ?",
+      question: "Support 24/24h 7/7j",
       answer:
-        "Nous enseignons l'analyse technique approfondie et l'analyse fondamentale pour vous fournir une perspective complète sur les marchés financiers.",
+        "Kan3etiwekoume whatssap personnel dyalna ayi we9ita kankounou m3akoum.",
     },
   ];
 

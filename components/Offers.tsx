@@ -41,10 +41,7 @@ const offers: Offer[] = [
         name: 'Follow-up Sessions',
         price: 'Free',
       },
-      {
-        name:'Daily Analysis Group',
-        price:'150 dh',
-      }
+     
     ],
     totalPriceBeforeDiscount: 2250,
     totalDiscountedPrice: 1950,
@@ -54,8 +51,8 @@ const offers: Offer[] = [
     id: 2,
     title: 'Premium One-to-One Coaching',
     items: [
-      { name: 'Personalized Strategy Sessions', price: '1000' },
-      { name: 'Direct Access to Head Coach', price: '1000' },
+      { name: 'Personalized Strategy Sessions', price: '1000 dh' },
+      { name: 'Direct Access to Head Coach', price: '1000 dh' },
       {
         name: 'Advanced Technical Analysis',
         price: 'Free',
@@ -66,11 +63,15 @@ const offers: Offer[] = [
         ]
       },
       { name: 'Mastering Risk Management', price: 'Free' },
-      { name: 'Exclusive Mentorship', price: '1500' },
+      { name: 'Exclusive Mentorship', price: '1000 dh' },
       { name: 'Unlimited Follow-up Sessions', price: 'Free' },
+      {
+        name:'Daily Analysis Group',
+        price:'1100 dh',
+      }
     ],
     totalPriceBeforeDiscount: 4500,
-    totalDiscountedPrice: 3500,
+    totalDiscountedPrice: 3100,
     description: ''
   },
 ];

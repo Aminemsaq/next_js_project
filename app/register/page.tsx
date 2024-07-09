@@ -105,7 +105,7 @@ const Registration: React.FC = () => {
       <div className="bg-slate-950 pt-28 flex flex-col justify-center items-center">
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-md mx-auto bg-white shadow-md rounded-lg p-4 sm:p-6">
-            <h2 className="text-2xl font-bold text-center text-gray-800 mb-4">
+            <h2 className="text-2xl font-bold text-center text-gray-800 mb-2">
               REJOIGNEZ NOS PLANS AUJOURD’HUI
             </h2>
             <p className="text-center text-gray-600 mb-4">Et transformez votre vie !</p>

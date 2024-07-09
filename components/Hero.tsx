@@ -1,23 +1,19 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useState } from "react";
-import Link from "next/link";
 import Head from "next/head";
 import { BsPlayFill } from "react-icons/bs"; // Import the play icon from React Icons
 import Image from "next/image"; // Import Image component from Next.js
-
-
+import RefreshLink from "./RefreshLink";
 
 const HeroSection = () => {
-
   const thumbnailWebp = "/images/image.webp"; // Path to your WebP thumbnail
   const [showVideo, setShowVideo] = useState(false);
 
   const handleImageClick = () => {
     setShowVideo(true);
   };
-
-  
 
   return (
     <div>
@@ -28,18 +24,16 @@ const HeroSection = () => {
       <nav className="bg-slate-950 p-5 fixed top-0 left-0 w-full z-20">
         <div className="container mx-auto flex justify-between items-center">
           <div className="text-white text-2xl font-bold">
-            <Link href="/" passHref aria-label="Home">
+            <RefreshLink href="/" aria-label="Home">
               GamirAcademy
-            </Link>
+            </RefreshLink>
           </div>
-          <div className="flex">
-            <Link
+          <div className="flex bg-orange-600 text-white hover:bg-orange-400 px-2 py-2 md:px-5 md:py-2 rounded-md transition duration-300 cursor-pointer text-sm md:text-base">
+            <RefreshLink
               href="/register"
-              passHref
-              className="bg-orange-600 text-white hover:bg-orange-400 px-2 py-2 md:px-5 md:py-2 rounded-md transition duration-300 cursor-pointer text-sm md:text-base"
             >
               Inscrire dans le cours
-            </Link>
+            </RefreshLink>
           </div>
         </div>
       </nav>
@@ -50,8 +44,8 @@ const HeroSection = () => {
       >
         <div className="container mx-auto text-center lg:px-9 pt-15">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 mt-14 px-3">
-          Kan3elmok, Kattabe9
-           <span className="text-orange-500">, Katbedel 7yatek.</span>
+            Kan3elmok, Kattabe9
+            <span className="text-orange-500">, Katbedel 7yatek.</span>
           </h1>
           <p className="text-lg md:text-2xl mb-12 px-6">
             Apprenez à trader en suivant des étapes simples et efficaces.

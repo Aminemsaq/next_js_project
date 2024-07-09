@@ -24,7 +24,12 @@ const FaqSection = () => {
         "Seances de suivie le weekend + acces les groupes li kanhetto fih daily analysis.",
     },
     {
-      question: "Support 24/24h 7/7j",
+      question: "Kifache nedeweze payement $$$ deyali ?",
+      answer:
+        "Kate3emer formulaire d'inscription kayedewi m3ake support kane3etiweke consultation fabor + methode de payement, mora virement kateweli gamir academy student.",
+    },
+    {
+      question: "Wache support 24/24h 7/7j ?",
       answer:
         "Kan3etiwekoume whatssap personnel dyalna ayi we9ita kankounou m3akoum.",
     }

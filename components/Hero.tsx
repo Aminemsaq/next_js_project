@@ -6,6 +6,7 @@ import Head from "next/head";
 import { BsPlayFill } from "react-icons/bs"; // Import the play icon from React Icons
 import Image from "next/image"; // Import Image component from Next.js
 import RefreshLink from "./RefreshLink";
+import { motion } from "framer-motion"; // Import framer-motion
 
 const HeroSection = () => {
   const thumbnailWebp = "/images/image.webp"; // Path to your WebP thumbnail
@@ -29,9 +30,7 @@ const HeroSection = () => {
             </RefreshLink>
           </div>
           <div className="flex bg-orange-600 text-white hover:bg-orange-400 px-2 py-2 md:px-5 md:py-2 rounded-md transition duration-300 cursor-pointer text-sm md:text-base">
-            <RefreshLink
-              href="/register"
-            >
+            <RefreshLink href="/register">
               Inscrire dans le cours
             </RefreshLink>
           </div>
@@ -43,20 +42,33 @@ const HeroSection = () => {
         id="home"
       >
         <div className="container mx-auto text-center lg:px-9 pt-15">
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 mt-14 px-3">
+          <motion.h1
+            className="text-4xl md:text-6xl font-bold mb-6 mt-14 px-3"
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7 }}
+          >
             Kan3elmok, Kattabe9
             <span className="text-orange-500">, Katbedel 7yatek.</span>
-          </h1>
-          <p className="text-lg md:text-2xl mb-12 px-6">
+          </motion.h1>
+          <motion.p
+            className="text-lg md:text-2xl mb-12 px-6"
+            initial={{ opacity: 0, y: 50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.7, delay: 0.3 }}
+          >
             Apprenez à trader en suivant des étapes simples et efficaces.
             Transformez vos finances et atteignez vos objectifs grâce à Gamir
             Academy.
-          </p>
+          </motion.p>
           <div className="mb-6 relative">
             {showVideo ? (
-              <div
+              <motion.div
                 className="relative"
                 style={{ paddingBottom: "56.25%", height: 0 }}
+                initial={{ opacity: 0, scale: 0.9 }}
+                animate={{ opacity: 1, scale: 1 }}
+                transition={{ duration: 0.5 }}
               >
                 <iframe
                   width="100%"
@@ -68,18 +80,22 @@ const HeroSection = () => {
                   allowFullScreen
                   className="absolute top-0 left-0 w-full h-full"
                 ></iframe>
-              </div>
+              </motion.div>
             ) : (
-              <>
-                <div onClick={handleImageClick}>
+              <motion.div
+                initial={{ opacity: 0, y: -50 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5 }}
+              >
+                <div onClick={handleImageClick} className="relative">
                   <Image
                     src={thumbnailWebp}
                     alt="Thumbnail"
                     layout="responsive"
                     width={500}
                     height={500}
-                    priority // Adjust the height to be smaller
-                    className="cursor-pointer opacity-80 px-3 h-[150px]" // Added Tailwind CSS class for blur
+                    priority
+                    className="cursor-pointer opacity-80 px-3 h-[150px]"
                   />
                   <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
                     <div className="bg-orange-600 rounded-full">
@@ -91,7 +107,7 @@ const HeroSection = () => {
                     </div>
                   </div>
                 </div>
-              </>
+              </motion.div>
             )}
           </div>
         </div>

@@ -10,7 +10,7 @@ const config: Config = {
     extend: {
       fontFamily: {
         sans: ['Poppins', 'sans-serif'],
-      },
+      }
     },
   },
   plugins: [],

@@ -33,9 +33,14 @@ const Carrousels = () => {
 
   return (
     <div className="flex flex-wrap justify-center py-10">
-      <h2 className="text-4xl md:text-5xl font-bold mb-12 text-center w-full text-white">
-        Témoignages
+       <div className="container mx-auto px-4">
+      <h1 className="text-white text-center text-4xl md:text-5xl font-extrabold mb-6">
+      Témoignages
+      </h1>
+      <h2 className="text-white text-center text-2xl mb-10">
+      Hta nta t9der tbedel 7yatek b7alhoum !
       </h2>
+      </div>
       {testimonials.map((testimonial, index) => (
         <div key={index} className="w-full sm:w-1/2 md:w-1/3 lg:w-1/4 p-4">
           <div className="bg-white rounded-lg border-b-2 border-white-500 overflow-hidden relative">
@@ -80,6 +85,7 @@ const Carrousels = () => {
                   </svg>
                 </div>
               </div>
+              
             )}
             <button
               className="absolute top-0 right-0 m-2 p-2 bg-gray-600 rounded-full hover:bg-gray-700 focus:outline-none"

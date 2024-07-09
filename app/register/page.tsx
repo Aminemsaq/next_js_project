@@ -3,7 +3,7 @@
 "use client";
 import Link from 'next/link';
 import React, { useState } from 'react';
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 import axios from 'axios';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -109,7 +109,7 @@ const Registration: React.FC = () => {
                 Merci pour votre inscription !
               </h2>
               <p className="text-gray-600 mb-4">
-                Notre support vous contactera dans les 24 heures pour une consultation.
+              Un membre de notre équipe de support vous contactera dans les 24 heures pour organiser une consultation.
               </p>
             </div>
           ) : (
@@ -214,18 +214,18 @@ const Registration: React.FC = () => {
       <div className="mt-10 text-center text-gray-500 text-sm">
         <h3 className="text-lg font-semibold mb-2">Suivez-nous</h3>
         <div className="flex justify-center items-center space-x-6">
-          <a href="https://www.facebook.com" className="text-gray-400 hover:text-white">
+          <a href="https://www.facebook.com/share/cnrMCz4VqzEZEwsT/?mibextid=LQQJ4d" className="text-gray-400 hover:text-white">
             <FaFacebook className="w-6 h-6" />
           </a>
-          <a href="https://www.twitter.com" className="text-gray-400 hover:text-white">
-            <FaTwitter className="w-6 h-6" />
-          </a>
-          <a href="https://www.instagram.com" className="text-gray-400 hover:text-white">
+          <a href="https://www.instagram.com/gamir.academy/" className="text-gray-400 hover:text-white">
             <FaInstagram className="w-6 h-6" />
           </a>
-          <a href="https://www.linkedin.com" className="text-gray-400 hover:text-white">
-            <FaLinkedin className="w-6 h-6" />
-          </a>
+          <a href="https://wa.link/f0xy55" className="text-gray-400 hover:text-white">
+              <FaWhatsapp className="w-6 h-6" />
+            </a>
+        </div>
+        <div className="mt-3 lg:mt-5">
+          &copy; 2024 Gamir Academy. Tous droits réservés.
         </div>
       </div>
     </>

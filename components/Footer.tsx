@@ -1,4 +1,4 @@
-import { FaFacebook, FaTwitter, FaInstagram, FaLinkedin } from 'react-icons/fa';
+import { FaFacebook, FaInstagram, FaWhatsapp } from 'react-icons/fa';
 
 const Footer = () => {
   return (
@@ -10,32 +10,19 @@ const Footer = () => {
           <p className="text-gray-400 mt-2">Débloquez votre potentiel de trading avec nous.</p>
         </div>
         {/* Links */}
-        <div className="flex lg:flex-row mb-6 lg:mb-0 lg:space-x-10 text-left lg:text-left">
-          <div className="lg:mb-0 flex flex-col">
-            <h3 className="text-lg font-semibold mb-2">Liens</h3>
-            <ul className='flex flex-col gap-2 lg:flex-row lg:gap-4'>
-              <li><a href="" className="text-gray-400  hover:text-white">Accueil</a></li>
-              <li><a href="" className="text-gray-400  hover:text-white">À propos</a></li>
-              <li><a href="" className="text-gray-400 hover:text-white">Offers</a></li>
-              <li><a href="" className="text-gray-400 hover:text-white">Contact</a></li>
-            </ul>
-          </div>
-        </div>
+        
         {/* Social Media */}
         <div className="text-left lg:text-left">
           <h3 className="text-lg font-semibold mb-2">Suivez-nous</h3>
           <div className="flex justify-start lg:justify-start space-x-6">
-            <a href="https://www.facebook.com" className="text-gray-400 hover:text-white">
+            <a href="https://www.facebook.com/share/cnrMCz4VqzEZEwsT/?mibextid=LQQJ4d" className="text-gray-400 hover:text-white">
               <FaFacebook className="w-6 h-6" />
             </a>
-            <a href="https://www.twitter.com" className="text-gray-400 hover:text-white">
-              <FaTwitter className="w-6 h-6" />
-            </a>
-            <a href="https://www.instagram.com" className="text-gray-400 hover:text-white">
+            <a href="https://www.instagram.com/gamir.academy/" className="text-gray-400 hover:text-white">
               <FaInstagram className="w-6 h-6" />
             </a>
-            <a href="https://www.linkedin.com" className="text-gray-400 hover:text-white">
-              <FaLinkedin className="w-6 h-6" />
+            <a href="https://wa.link/f0xy55" className="text-gray-400 hover:text-white">
+              <FaWhatsapp className="w-6 h-6" />
             </a>
           </div>
         </div>

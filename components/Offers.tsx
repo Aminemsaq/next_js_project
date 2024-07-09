@@ -130,10 +130,10 @@ const Offers: React.FC = () => (
   <section className="bg-slate-950 py-16" id="buy">
     <div className="container mx-auto px-4">
       <h1 className="text-white text-center text-4xl md:text-5xl font-extrabold mb-6">
-        Join Us and Change Your Life
+      Rejoignez-nous et changez votre vie
       </h1>
       <h2 className="text-orange-500 text-center text-2xl mb-10">
-        Special Offer You Can't Miss!
+      Offre spéciale à ne pas manquer !
       </h2>
       <div className="flex flex-col lg:flex-row justify-center items-stretch lg:space-x-10">
         {offers.map((offer) => (

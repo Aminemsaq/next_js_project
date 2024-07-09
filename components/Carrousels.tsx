@@ -4,8 +4,8 @@ import { useState } from "react";
 
 const initialTestimonials = [
   {
-    url: "https://www.youtube.com/embed/rHrYfGi-78k",
-    thumbnail: "https://img.youtube.com/vi/rHrYfGi-78k/hqdefault.jpg",
+    url: "https://www.youtube.com/embed/nF-G5ktRchE",
+    thumbnail: "https://img.youtube.com/vi/nF-G5ktRchE/hqdefault.jpg",
     playing: false,
   },
   {
@@ -14,8 +14,8 @@ const initialTestimonials = [
     playing: false,
   },
   {
-    url: "https://www.youtube.com/embed/F-Jv7exUeZc",
-    thumbnail: "https://img.youtube.com/vi/F-Jv7exUeZc/hqdefault.jpg",
+    url: "https://www.youtube.com/embed/rHrYfGi-78k",
+    thumbnail: "https://img.youtube.com/vi/rHrYfGi-78k/hqdefault.jpg",
     playing: false,
   },
 ];
